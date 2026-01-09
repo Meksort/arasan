@@ -2,7 +2,6 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import TariffCard from "@/components/TariffCard";
 import CartDrawer, { CartItem } from "@/components/CartDrawer";
-import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 
 const tariffs = [
@@ -95,8 +94,6 @@ const Index = () => {
         onCartClick={() => setIsCartOpen(true)}
       />
 
-      <Features />
-
       {/* Tariffs Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -126,19 +123,6 @@ const Index = () => {
                 onAdd={(option, quantity) => handleAddToCart(tariff.id, tariff.title, option, quantity)}
               />
             ))}
-          </div>
-
-          {/* All Tariffs Link */}
-          <div className="text-center mt-12">
-            <div className="inline-flex items-center gap-4 bg-card border border-border rounded-2xl px-6 py-4">
-              <div className="text-left">
-                <p className="font-medium text-foreground">Посмотреть все тарифы</p>
-                <p className="text-sm text-muted-foreground">Другие временные слоты и варианты</p>
-              </div>
-              <button className="px-4 py-2 bg-secondary text-secondary-foreground rounded-xl hover:bg-secondary/80 transition-colors font-medium text-sm">
-                Открыть
-              </button>
-            </div>
           </div>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plus, Minus, Clock, Users } from "lucide-react";
+import { Plus, Minus, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -43,16 +43,11 @@ const TariffCard = ({ title, subtitle, timeSlot, options, icon, onAdd, delay = 0
     >
       {/* Header */}
       <div className={cn("p-6 bg-gradient-to-br", iconColors[icon])}>
-        <div className="flex items-start justify-between">
-          <div>
-            <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium mb-3">
-              {subtitle}
-            </span>
-            <h3 className="font-serif text-2xl text-white font-medium whitespace-nowrap">{title}</h3>
-          </div>
-          <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center shrink-0">
-            <Users className="w-6 h-6 text-white" />
-          </div>
+        <div>
+          <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium mb-3">
+            {subtitle}
+          </span>
+          <h3 className="font-serif text-2xl text-white font-medium whitespace-nowrap">{title}</h3>
         </div>
         <div className="flex items-center gap-2 mt-4 text-white/80 text-sm">
           <Clock className="w-4 h-4" />
