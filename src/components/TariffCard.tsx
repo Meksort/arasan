@@ -90,7 +90,7 @@ const TariffCard = ({ title, subtitle, timeSlot, options, icon, onAdd, delay = 0
             <Button
               variant="ghost"
               size="icon"
-              className="h-8 w-8 rounded-lg"
+              className="h-10 w-8 rounded-lg"
               onClick={() => setQuantity(quantity + 1)}
             >
               <Plus className="w-4 h-4" />
