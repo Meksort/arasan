@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import TariffCard from "@/components/TariffCard";
 import CartDrawer, { CartItem } from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
-
+import arasanBuilding from "@/assets/arasan-building.jpg";
 const tariffs = [
   {
     id: "adult",
@@ -95,7 +95,12 @@ const Index = () => {
       />
 
       {/* Tariffs Section */}
-      <section className="py-16">
+      <section className="py-16 relative">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 pointer-events-none"
+          style={{ backgroundImage: `url(${arasanBuilding})` }}
+        />
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1.5 bg-accent/20 text-accent-foreground rounded-full text-sm font-medium mb-4">
