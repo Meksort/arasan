@@ -48,22 +48,9 @@ const Header = ({ cartCount, cartTotal, onCartClick }: HeaderProps) => {
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 tracking-tight">
             Arasan Wellness & SPA
           </h1>
-          <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+          <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto">
             Премиальный банный комплекс в самом сердце Алматы
           </p>
-          
-          {/* Info Tags */}
-          <div className="flex flex-wrap justify-center gap-3">
-            <span className="px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full text-primary-foreground text-sm border border-primary-foreground/20">
-              Мужские и женские бани
-            </span>
-            <span className="px-4 py-2 bg-accent/20 backdrop-blur-sm rounded-full text-primary-foreground text-sm border border-accent/30">
-              Онлайн оплата
-            </span>
-            <span className="px-4 py-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full text-primary-foreground text-sm border border-primary-foreground/20">
-              Быстрый проход
-            </span>
-          </div>
         </div>
 
         {/* Cart Summary (Floating) */}
