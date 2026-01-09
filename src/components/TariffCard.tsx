@@ -38,7 +38,7 @@ const TariffCard = ({ title, subtitle, timeSlot, options, icon, onAdd, delay = 0
 
   return (
     <div 
-      className="bg-card rounded-2xl border border-border shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group animate-fade-in"
+      className="bg-card rounded-2xl border border-border shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group animate-fade-in min-w-[320px]"
       style={{ animationDelay: `${delay}ms` }}
     >
       {/* Header */}
@@ -48,9 +48,9 @@ const TariffCard = ({ title, subtitle, timeSlot, options, icon, onAdd, delay = 0
             <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium mb-3">
               {subtitle}
             </span>
-            <h3 className="font-serif text-2xl text-white font-medium">{title}</h3>
+            <h3 className="font-serif text-2xl text-white font-medium whitespace-nowrap">{title}</h3>
           </div>
-          <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+          <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center shrink-0">
             <Users className="w-6 h-6 text-white" />
           </div>
         </div>
