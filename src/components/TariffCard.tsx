@@ -31,8 +31,8 @@ const TariffCard = ({ title, subtitle, timeSlot, options, icon, onAdd, delay = 0
   };
 
   const iconColors = {
-    adult: "from-primary to-spa-burgundy-light",
-    child: "from-primary to-spa-burgundy-light",
+    adult: "from-spa-burgundy-light to-primary",
+    child: "from-spa-burgundy-light to-primary",
     senior: "from-spa-burgundy-light to-primary",
   };
 
