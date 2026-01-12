@@ -19,16 +19,16 @@ const Header = ({ cartCount, cartTotal, onCartClick }: HeaderProps) => {
         }}
       />
       
-      <div className="relative z-10 container mx-auto px-4 py-8">
-        {/* Top Bar */}
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center gap-6 text-primary-foreground/80 text-sm">
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
+      <div className="relative z-10 container mx-auto px-4 py-4 sm:py-8 safe-area-inset-top">
+        {/* Top Bar - Mobile optimized */}
+        <div className="flex items-center justify-between mb-4 sm:mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6 text-primary-foreground/80 text-xs sm:text-sm">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               <span>06:00 — 23:30</span>
             </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               <span>Центр Алматы</span>
             </div>
           </div>
@@ -36,31 +36,32 @@ const Header = ({ cartCount, cartTotal, onCartClick }: HeaderProps) => {
           <Button 
             variant="outline" 
             onClick={onCartClick}
-            className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/20 transition-all"
+            size="sm"
+            className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/20 transition-all text-xs sm:text-sm px-3 sm:px-4"
           >
-            <ShoppingCart className="w-4 h-4 mr-2" />
-            Корзина ({cartCount})
+            <ShoppingCart className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
+            <span className="hidden xs:inline">Корзина </span>({cartCount})
           </Button>
         </div>
 
-        {/* Main Hero */}
-        <div className="text-center py-12">
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 tracking-tight">
+        {/* Main Hero - Mobile optimized */}
+        <div className="text-center py-6 sm:py-12">
+          <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-2 sm:mb-4 tracking-tight">
             Arasan Wellness & SPA
           </h1>
-          <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-primary-foreground/80 text-sm sm:text-lg md:text-xl max-w-2xl mx-auto px-2">
             Премиальный банный комплекс в самом сердце Алматы
           </p>
         </div>
 
-        {/* Cart Summary (Floating) */}
+        {/* Cart Summary (Floating) - Mobile optimized */}
         {cartCount > 0 && (
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-card shadow-xl rounded-2xl px-6 py-4 flex items-center gap-4 border border-border">
-            <div className="text-sm">
-              <span className="text-muted-foreground">Ваш заказ:</span>
-              <span className="ml-2 font-semibold text-foreground">{cartTotal.toLocaleString()} ₸</span>
+          <div className="absolute -bottom-5 sm:-bottom-6 left-1/2 -translate-x-1/2 bg-card shadow-xl rounded-xl sm:rounded-2xl px-4 sm:px-6 py-3 sm:py-4 flex items-center gap-3 sm:gap-4 border border-border w-[calc(100%-2rem)] sm:w-auto max-w-sm sm:max-w-none">
+            <div className="text-xs sm:text-sm flex-1 sm:flex-none">
+              <span className="text-muted-foreground">Заказ:</span>
+              <span className="ml-1.5 sm:ml-2 font-semibold text-foreground">{cartTotal.toLocaleString()} ₸</span>
             </div>
-            <Button onClick={onCartClick} size="sm" className="bg-primary hover:bg-primary/90">
+            <Button onClick={onCartClick} size="sm" className="bg-primary hover:bg-primary/90 text-xs sm:text-sm">
               Оформить
             </Button>
           </div>
