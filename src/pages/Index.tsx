@@ -95,11 +95,11 @@ const Index = () => {
       />
 
       {/* Tariffs Section */}
-      <section className="py-16 relative">
+      <section className="py-16 pb-0 relative min-h-[calc(100vh-80px)]">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 pointer-events-none"
-          style={{ backgroundImage: `url(${arasanBuilding})` }}
+          style={{ backgroundImage: `url(${arasanBuilding})`, backgroundSize: 'cover', backgroundPosition: 'center bottom' }}
         />
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
