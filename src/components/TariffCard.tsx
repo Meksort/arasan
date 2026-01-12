@@ -18,7 +18,7 @@ interface TariffCardProps {
   delay?: number;
 }
 
-const TariffCard = ({ title, subtitle, timeSlot, options, icon, onAdd, delay = 0 }: TariffCardProps) => {
+const TariffCard = ({ title, subtitle, timeSlot, options, icon: _icon, onAdd, delay = 0 }: TariffCardProps) => {
   const [selectedOption, setSelectedOption] = useState<TariffOption | null>(null);
   const [quantity, setQuantity] = useState(1);
 
@@ -30,11 +30,8 @@ const TariffCard = ({ title, subtitle, timeSlot, options, icon, onAdd, delay = 0
     }
   };
 
-  const iconColors = {
-    adult: "from-spa-burgundy-light to-primary",
-    child: "from-spa-burgundy-light to-primary",
-    senior: "from-spa-burgundy-light to-primary",
-  };
+  // Keep header color identical for all tariffs
+  const headerGradient = "from-spa-burgundy-light to-primary";
 
   return (
     <div 
@@ -42,7 +39,7 @@ const TariffCard = ({ title, subtitle, timeSlot, options, icon, onAdd, delay = 0
       style={{ animationDelay: `${delay}ms` }}
     >
       {/* Header */}
-      <div className={cn("p-6 bg-gradient-to-br", iconColors[icon])}>
+      <div className={cn("p-6 bg-gradient-to-br", headerGradient)}>
         <div>
           <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium mb-3">
             {subtitle}
