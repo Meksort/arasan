@@ -87,7 +87,7 @@ const Index = () => {
   const cartTotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header 
         cartCount={cartCount}
         cartTotal={cartTotal}
@@ -95,13 +95,13 @@ const Index = () => {
       />
 
       {/* Tariffs Section */}
-      <section className="py-16 pb-0 relative min-h-[calc(100vh-80px)]">
+      <section className="py-16 pb-16 relative flex-1">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 pointer-events-none"
           style={{ backgroundImage: `url(${arasanBuilding})`, backgroundSize: 'cover', backgroundPosition: 'center bottom' }}
         />
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1.5 bg-accent/20 text-accent-foreground rounded-full text-sm font-medium mb-4">
               Сейчас доступно
