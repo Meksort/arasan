@@ -55,12 +55,6 @@ const Success = () => {
 
       <main className="container mx-auto px-4 py-8 sm:py-12">
         <div className="max-w-2xl mx-auto">
-        {/* Success Icon */}
-          <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-green-100 flex items-center justify-center animate-fade-in">
-              <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10 text-green-500" />
-            </div>
-          </div>
 
           {/* Entry Code Card */}
           <div className="bg-card rounded-2xl border border-border p-5 sm:p-6 mb-5 shadow-sm">
@@ -139,11 +133,6 @@ const Success = () => {
                 </span>
               </div>
 
-              {/* Order ID */}
-              <div className="flex items-center justify-between text-[10px] sm:text-xs text-muted-foreground">
-                <span>ID заказа:</span>
-                <span className="font-mono">{orderId}</span>
-              </div>
             </div>
           </div>
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { ArrowLeft, User, Phone, Mail, CreditCard, Shield, Clock } from "lucide-react";
+import { ArrowLeft, User, Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -147,49 +147,20 @@ const Checkout = () => {
                 </div>
               </div>
 
-              {/* Payment Method Card */}
-              <div className="bg-card rounded-2xl border border-border p-5 sm:p-8 shadow-sm">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
-                    <CreditCard className="w-5 h-5 text-accent" />
-                  </div>
-                  <h2 className="font-serif text-xl sm:text-2xl text-foreground">
-                    Способ оплаты
-                  </h2>
-                </div>
-
-                {/* Kaspi Button */}
-                <button
-                  type="button"
-                  className="w-full bg-gradient-to-r from-[#F14635] to-[#E8432A] hover:from-[#E8432A] hover:to-[#D93C24] text-white rounded-xl py-4 px-6 flex items-center justify-center gap-4 transition-all duration-200 shadow-lg hover:shadow-xl active:scale-[0.98]"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="bg-white rounded-lg p-1.5">
-                      <span className="text-[#F14635] font-bold text-sm">K</span>
-                    </div>
-                    <span className="font-semibold text-lg">Kaspi.kz</span>
-                  </div>
-                  <div className="w-px h-6 bg-white/30" />
-                  <div className="bg-white/20 rounded-lg p-1.5">
-                    <CreditCard className="w-5 h-5" />
-                  </div>
-                </button>
-
-                <p className="text-xs text-muted-foreground text-center mt-4 flex items-center justify-center gap-1.5">
-                  <Shield className="w-3.5 h-3.5" />
-                  Безопасная оплата через Kaspi Pay
-                </p>
-              </div>
-
               {/* Submit Button - Mobile */}
-              <div className="lg:hidden">
-                <Button 
-                  type="submit" 
+              <div className="lg:hidden mt-6">
+                <button
+                  type="submit"
                   disabled={isSubmitting}
-                  className="w-full h-14 text-base font-semibold bg-gradient-to-r from-spa-burgundy-light to-primary hover:opacity-90 rounded-xl shadow-lg"
+                  className="w-full bg-gradient-to-r from-[#F14635] to-[#E8432A] hover:from-[#E8432A] hover:to-[#D93C24] text-white rounded-xl py-4 px-6 flex items-center justify-center gap-3 transition-all duration-200 shadow-lg hover:shadow-xl active:scale-[0.98] disabled:opacity-50"
                 >
-                  {isSubmitting ? "Обработка..." : `Оплатить ${total.toLocaleString()} ₸`}
-                </Button>
+                  <div className="bg-white rounded-lg p-1.5">
+                    <span className="text-[#F14635] font-bold text-sm">K</span>
+                  </div>
+                  <span className="font-semibold text-lg">
+                    {isSubmitting ? "Обработка..." : "Kaspi.kz"}
+                  </span>
+                </button>
               </div>
             </form>
           </div>
@@ -242,13 +213,19 @@ const Checkout = () => {
 
               {/* Submit Button - Desktop */}
               <div className="hidden lg:block mt-6">
-                <Button 
+                <button
+                  type="button"
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className="w-full h-12 text-base font-semibold bg-gradient-to-r from-spa-burgundy-light to-primary hover:opacity-90 rounded-xl shadow-lg"
+                  className="w-full bg-gradient-to-r from-[#F14635] to-[#E8432A] hover:from-[#E8432A] hover:to-[#D93C24] text-white rounded-xl py-4 px-6 flex items-center justify-center gap-3 transition-all duration-200 shadow-lg hover:shadow-xl active:scale-[0.98] disabled:opacity-50"
                 >
-                  {isSubmitting ? "Обработка..." : "Оплатить"}
-                </Button>
+                  <div className="bg-white rounded-lg p-1.5">
+                    <span className="text-[#F14635] font-bold text-sm">K</span>
+                  </div>
+                  <span className="font-semibold text-lg">
+                    {isSubmitting ? "Обработка..." : "Kaspi.kz"}
+                  </span>
+                </button>
               </div>
             </div>
           </div>
