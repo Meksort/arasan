@@ -1,4 +1,5 @@
-import { X, Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
+import { Minus, Plus, ShoppingBag, Trash2, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 
@@ -19,7 +20,13 @@ interface CartDrawerProps {
 }
 
 const CartDrawer = ({ isOpen, onClose, items, onUpdateQuantity, onRemove }: CartDrawerProps) => {
+  const navigate = useNavigate();
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  const handleCheckout = () => {
+    onClose();
+    navigate("/checkout", { state: { items } });
+  };
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
@@ -97,12 +104,16 @@ const CartDrawer = ({ isOpen, onClose, items, onUpdateQuantity, onRemove }: Cart
                   </span>
                 </div>
                 
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-11 sm:h-12 text-sm sm:text-base active:scale-[0.98]">
+                <Button 
+                  onClick={handleCheckout}
+                  className="w-full bg-gradient-to-r from-spa-burgundy-light to-primary hover:opacity-90 text-primary-foreground h-11 sm:h-12 text-sm sm:text-base active:scale-[0.98] gap-2"
+                >
                   Перейти к оплате
+                  <ArrowRight className="w-4 h-4" />
                 </Button>
                 
                 <p className="text-[10px] sm:text-xs text-center text-muted-foreground mt-2 sm:mt-3">
-                  Безопасная оплата картой
+                  Безопасная оплата через Kaspi
                 </p>
               </div>
             </>
