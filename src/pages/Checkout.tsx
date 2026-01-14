@@ -59,18 +59,15 @@ const Checkout = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-gradient-to-r from-spa-burgundy-light to-primary py-6 sm:py-8">
+      <header className="bg-gradient-to-r from-spa-burgundy-light to-primary py-5 sm:py-6">
         <div className="container mx-auto px-4">
           <button 
             onClick={() => navigate("/")}
-            className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors mb-4"
+            className="flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span className="text-sm">Назад к тарифам</span>
           </button>
-          <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl text-primary-foreground italic">
-            Оформление заказа
-          </h1>
         </div>
       </header>
 

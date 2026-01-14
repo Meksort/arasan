@@ -44,15 +44,6 @@ const Success = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-spa-burgundy-light to-primary py-6 sm:py-8">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl text-primary-foreground italic">
-            Оплата прошла успешно!
-          </h1>
-        </div>
-      </header>
-
       <main className="container mx-auto px-4 py-8 sm:py-12">
         <div className="max-w-2xl mx-auto">
 
